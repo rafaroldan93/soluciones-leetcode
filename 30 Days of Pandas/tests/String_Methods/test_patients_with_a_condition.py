@@ -8,23 +8,23 @@ from String_Methods.patients_with_a_condition import find_patients
     # 1. Basic case with patients having Type I Diabetes
     (
         [
-            [1, 'Daniel', 'YFEV COUGH'],
-            [2, 'Alice', ''],
-            [3, 'Bob', 'DIAB100 MYOP'],
-            [4, 'George', 'ACNE DIAB100'],
-            [5, 'Alain', 'DIAB201']
+            [1, "Daniel", "YFEV COUGH"],
+            [2, "Alice", ""],
+            [3, "Bob", "DIAB100 MYOP"],
+            [4, "George", "ACNE DIAB100"],
+            [5, "Alain", "DIAB201"]
         ],
         [
-            [3, 'Bob', 'DIAB100 MYOP'],
-            [4, 'George', 'ACNE DIAB100']
+            [3, "Bob", "DIAB100 MYOP"],
+            [4, "George", "ACNE DIAB100"]
         ]
     ),
     # 2. No patients with Type I Diabetes
     (
         [
-            [1, 'Daniel', 'YFEV COUGH'],
-            [2, 'Alice', ''],
-            [5, 'Alain', 'DIAB201']
+            [1, "Daniel", "YFEV COUGH"],
+            [2, "Alice", ""],
+            [5, "Alain", "DIAB201"]
         ],
         []
     )

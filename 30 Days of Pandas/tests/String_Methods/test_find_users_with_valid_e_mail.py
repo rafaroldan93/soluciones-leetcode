@@ -8,31 +8,31 @@ from String_Methods.find_users_with_valid_e_mail import valid_emails
     # 1. Basic case with multiple valid emails
     (
         [
-            [1, 'Winston', 'winston@leetcode.com'],
-            [2, 'Jonathan', 'jonathanisgreat'],
-            [3, 'Annabelle', 'bella-@leetcode.com'],
-            [4, 'Sally', 'sally.come@leetcode.com'],
-            [5, 'Marwan', 'quarz#2020@leetcode.com'],
-            [6, 'David', 'david69@gmail.com'],
-            [7, 'Shapiro', '.shapo@leetcode.com']
+            [1, "Winston", "winston@leetcode.com"],
+            [2, "Jonathan", "jonathanisgreat"],
+            [3, "Annabelle", "bella-@leetcode.com"],
+            [4, "Sally", "sally.come@leetcode.com"],
+            [5, "Marwan", "quarz#2020@leetcode.com"],
+            [6, "David", "david69@gmail.com"],
+            [7, "Shapiro", ".shapo@leetcode.com"]
         ],
         [
-            [1, 'Winston', 'winston@leetcode.com'],
-            [3, 'Annabelle', 'bella-@leetcode.com'],
-            [4, 'Sally', 'sally.come@leetcode.com']
+            [1, "Winston", "winston@leetcode.com"],
+            [3, "Annabelle", "bella-@leetcode.com"],
+            [4, "Sally", "sally.come@leetcode.com"]
         ]
     ),
     # 2. No valid emails
     (
         [
-            [1, 'Alice', 'alice#gmail.com'],
-            [2, 'Bob', 'bob@.com'],
-            [3, 'Charlie', '33charlie@leetcode'],
-            [4, 'Diana', '-diana@leetcode..com'],
-            [5, 'Eve', '.eve@leetcode.com'],
-            [6, 'Frank', '_frank@leetcode,com'],
-            [7, 'Grace', ' grace@leetcode@com'],
-            [8, 'Hank', '$hank@leetcode..com']
+            [1, "Alice", "alice#gmail.com"],
+            [2, "Bob", "bob@.com"],
+            [3, "Charlie", "33charlie@leetcode"],
+            [4, "Diana", "-diana@leetcode..com"],
+            [5, "Eve", ".eve@leetcode.com"],
+            [6, "Frank", "_frank@leetcode,com"],
+            [7, "Grace", " grace@leetcode@com"],
+            [8, "Hank", "$hank@leetcode..com"]
         ],
         []
     )
