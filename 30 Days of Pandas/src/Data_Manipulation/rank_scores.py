@@ -56,7 +56,7 @@ def order_scores(scores: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    data = [
+    data: list[list[int | float]] = [
         [1, 3.5],
         [2, 3.65],
         [3, 4.0],
@@ -64,5 +64,5 @@ if __name__ == "__main__":
         [5, 4.0],
         [6, 3.65]
     ]
-    scores = pd.DataFrame(data, columns=["id", "score"]).astype({"id": "Int64", "score": "Float64"})
+    scores: pd.DataFrame = pd.DataFrame(data, columns=["id", "score"]).astype({"id": "Int64", "score": "Float64"})
     print(order_scores(scores).to_string(index=False))

@@ -53,7 +53,7 @@ from pandas.testing import assert_frame_equal
     "5. Case with multiple salaries but no second highest"
 ]
 )
-def test_second_highest_salary(data: list[list[int]], expected_data: list[list[int]] | list[list[None]]):
+def test_second_highest_salary(data: list[list[int]], expected_data: list[list[int]] | list[list[None]]) -> None:
     employee: pd.DataFrame = pd.DataFrame(data, columns=["id", "salary"]).astype({"id": "int64", "salary": "int64"})
     result: pd.DataFrame = second_highest_salary(employee).reset_index(drop=True)
     expected: pd.DataFrame = pd.DataFrame(expected_data, columns=["SecondHighestSalary"])

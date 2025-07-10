@@ -43,9 +43,9 @@ def fix_names(users: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    data = [
+    data: list[list[int | str]] = [
         [1, "aLice"],
         [2, "bOB"]
     ]
-    users = pd.DataFrame(data, columns=["user_id", "name"]).astype({"user_id": "Int64", "name": "object"})
+    users: pd.DataFrame = pd.DataFrame(data, columns=["user_id", "name"]).astype({"user_id": "Int64", "name": "object"})
     print(fix_names(users).to_string(index=False))

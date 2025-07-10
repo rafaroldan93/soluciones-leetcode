@@ -48,11 +48,11 @@ def delete_duplicate_emails(person: pd.DataFrame) -> None:
 
 
 if __name__ == "__main__":
-    data = [
+    data: list[list[int | str]] = [
         [1, "john@example.com"],
         [2, "bob@example.com"],
         [3, "john@example.com"]
     ]
-    person = pd.DataFrame(data, columns=["id", "email"]).astype({"id": "int64", "email": "object"})
+    person: pd.DataFrame = pd.DataFrame(data, columns=["id", "email"]).astype({"id": "int64", "email": "object"})
     delete_duplicate_emails(person)
     print(person.to_string(index=False))

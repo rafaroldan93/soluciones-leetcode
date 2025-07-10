@@ -48,10 +48,10 @@ def invalid_tweets(tweets: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    data = [
+    data: list[list[int | str]] = [
         [1, "Let us Code"],
         [2, "More than fifteen chars are here!"]
     ]
-    tweets = pd.DataFrame(data, columns=["tweet_id", "content"]).astype({"tweet_id": "Int64", "content": "object"})
+    tweets: pd.DataFrame = pd.DataFrame(data, columns=["tweet_id", "content"]).astype({"tweet_id": "Int64", "content": "object"})
 
     print(invalid_tweets(tweets).to_string(index=False))

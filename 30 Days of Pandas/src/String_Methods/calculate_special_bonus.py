@@ -60,13 +60,13 @@ def calculate_special_bonus(employees: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    data = [
+    data: list[list[int | str]] = [
         [2, "Meir", 3000],
         [3, "Michael", 3800],
         [7, "Addilyn", 7400],
         [8, "Juan", 6100],
         [9, "Kannon", 7700]
     ]
-    employees = pd.DataFrame(data, columns=["employee_id", "name", "salary"]).astype({"employee_id": "int64", "name": "object", "salary": "int64"})
+    employees: pd.DataFrame = pd.DataFrame(data, columns=["employee_id", "name", "salary"]).astype({"employee_id": "int64", "name": "object", "salary": "int64"})
 
     print(calculate_special_bonus(employees).to_string(index=False))

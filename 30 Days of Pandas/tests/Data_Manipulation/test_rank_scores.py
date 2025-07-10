@@ -93,8 +93,8 @@ from pandas.testing import assert_frame_equal
     "5. Mixed scores with ties"
 ]
 )
-def test_order_scores(data: list[list[int | float]], expected_data: list[list[float | int]]):
-    scores = pd.DataFrame(data, columns=["id", "score"])
-    result = order_scores(scores).reset_index(drop=True)
-    expected = pd.DataFrame(expected_data, columns=["score", "rank"])
+def test_order_scores(data: list[list[int | float]], expected_data: list[list[float | int]]) -> None:
+    scores: pd.DataFrame = pd.DataFrame(data, columns=["id", "score"])
+    result: pd.DataFrame = order_scores(scores).reset_index(drop=True)
+    expected: pd.DataFrame = pd.DataFrame(expected_data, columns=["score", "rank"])
     assert_frame_equal(result, expected)

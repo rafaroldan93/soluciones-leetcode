@@ -56,13 +56,13 @@ import pandas as pd
 
 
 def nth_highest_salary(employee: pd.DataFrame, N: int) -> pd.DataFrame:
-    salaries = employee.sort_values(by="salary", ascending=False).drop_duplicates("salary").reset_index(drop=True)
+    salaries: pd.DataFrame = employee.sort_values(by="salary", ascending=False).drop_duplicates("salary").reset_index(drop=True)
     if N > len(salaries) or N < 1:
         return pd.DataFrame([[None]], columns=[f"getNthHighestSalary({N})"])
     return salaries.loc[[N - 1], ["salary"]].rename(columns={"salary": f"getNthHighestSalary({N})"})
 
 
 if __name__ == "__main__":
-    data = [[1, 100], [2, 200], [3, 300]]
-    employee = pd.DataFrame(data, columns=["id", "salary"]).astype({"id": "Int64", "salary": "Int64"})
+    data: list[list[int]] = [[1, 100], [2, 200], [3, 300]]
+    employee: pd.DataFrame = pd.DataFrame(data, columns=["id", "salary"]).astype({"id": "Int64", "salary": "Int64"})
     print(nth_highest_salary(employee, 2).to_string(index=False))

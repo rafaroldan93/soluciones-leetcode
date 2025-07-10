@@ -55,13 +55,13 @@ import pandas as pd
 
 
 def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
-    salaries = employee.sort_values(by="salary", ascending=False).drop_duplicates("salary").reset_index(drop=True)
+    salaries: pd.DataFrame = employee.sort_values(by="salary", ascending=False).drop_duplicates("salary").reset_index(drop=True)
     if len(salaries) < 2:
         return pd.DataFrame([[None]], columns=["SecondHighestSalary"])
     return salaries.loc[[1], ["salary"]].rename(columns={"salary": "SecondHighestSalary"})
 
 
 if __name__ == "__main__":
-    data = [[1, 100], [2, 200], [3, 300]]
-    employee = pd.DataFrame(data, columns=["id", "salary"]).astype({"id": "int64", "salary": "int64"})
+    data: list[list[int]] = [[1, 100], [2, 200], [3, 300]]
+    employee: pd.DataFrame = pd.DataFrame(data, columns=["id", "salary"]).astype({"id": "int64", "salary": "int64"})
     print(second_highest_salary(employee).to_string(index=False))

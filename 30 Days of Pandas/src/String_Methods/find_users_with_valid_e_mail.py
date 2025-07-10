@@ -55,12 +55,12 @@ import pandas as pd
 
 
 def valid_emails(users: pd.DataFrame) -> pd.DataFrame:
-    regex = r"^^[a-zA-Z][\w\.\-]*@leetcode\.com$"
+    regex: str = r"^^[a-zA-Z][\w\.\-]*@leetcode\.com$"
     return users.loc[users["mail"].str.match(regex)]
 
 
 if __name__ == "__main__":
-    data = [
+    data: list[list[int | str]] = [
         [1, "Winston", "winston@leetcode.com"],
         [2, "Jonathan", "jonathanisgreat"],
         [3, "Annabelle", "bella-@leetcode.com"],
@@ -69,5 +69,5 @@ if __name__ == "__main__":
         [6, "David", "david69@gmail.com"],
         [7, "Shapiro", ".shapo@leetcode.com"]
     ]
-    users = pd.DataFrame(data, columns=["user_id", "name", "mail"]).astype({"user_id": "int64", "name": "object", "mail": "object"})
+    users: pd.DataFrame = pd.DataFrame(data, columns=["user_id", "name", "mail"]).astype({"user_id": "int64", "name": "object", "mail": "object"})
     print(valid_emails(users).to_string(index=False))

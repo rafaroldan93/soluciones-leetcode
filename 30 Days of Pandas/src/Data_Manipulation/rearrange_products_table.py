@@ -53,10 +53,10 @@ def rearrange_products_table(products: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    data = [
+    data: list[list[int] | list[int | None]] = [
         [0, 95, 100, 105],
         [1, 70, None, 80]
     ]
-    products = pd.DataFrame(data, columns=["product_id", "store1", "store2", "store3"]).astype(
+    products: pd.DataFrame = pd.DataFrame(data, columns=["product_id", "store1", "store2", "store3"]).astype(
         {"product_id": "Int64", "store1": "Int64", "store2": "Int64", "store3": "Int64"})
     print(rearrange_products_table(products).to_string(index=False))

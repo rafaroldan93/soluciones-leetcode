@@ -50,7 +50,7 @@ def article_views(views: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    data = [
+    data: list[list[int | str]] = [
         [1, 3, 5, "2019-08-01"],
         [1, 3, 6, "2019-08-02"],
         [2, 7, 7, "2019-08-01"],
@@ -59,7 +59,7 @@ if __name__ == "__main__":
         [3, 4, 4, "2019-07-21"],
         [3, 4, 4, "2019-07-21"]
     ]
-    views = pd.DataFrame(data, columns=["article_id", "author_id", "viewer_id", "view_date"]).astype(
+    views: pd.DataFrame = pd.DataFrame(data, columns=["article_id", "author_id", "viewer_id", "view_date"]).astype(
         {"article_id": "Int64", "author_id": "Int64", "viewer_id": "Int64", "view_date": "datetime64[ns]"})
 
     print(article_views(views).to_string(index=False))
