@@ -47,6 +47,6 @@ def test_rearrange_products_table(input_data: list[list[int | None]], expected_o
     products: pd.DataFrame = pd.DataFrame(input_data, columns=["product_id", "store1", "store2", "store3"]).astype(
         {"product_id": "Int64", "store1": "Int64", "store2": "Int64", "store3": "Int64"})
     result: pd.DataFrame = rearrange_products_table(products).reset_index(drop=True)
-    expected_df: pd.DataFrame = pd.DataFrame(expected_output, columns=["product_id", "store", "price"]).astype(
+    expected: pd.DataFrame = pd.DataFrame(expected_output, columns=["product_id", "store", "price"]).astype(
         {"product_id": "Int64", "store": "object", "price": "Int64"})
-    assert_frame_equal(result, expected_df)
+    assert_frame_equal(result, expected)
